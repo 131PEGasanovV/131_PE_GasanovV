@@ -13,11 +13,15 @@ namespace _131_PE_GasanovV
             int x;
             Console.WriteLine("Введите дневную выручку продовца");
             x = Convert.ToInt32(Console.ReadLine());
+            int min = 300;
 
-            if (x <= 10000)
-                Console.WriteLine("Выручка =", 0.05 * x);
+            if (0.05 * x < min)
+                 Console.WriteLine("Выручка = {0} ", min );
             else
-                Console.WriteLine("Выручка = {0} ", (10000 * 0.05) + ((x - 10000) * 0.1));
+                if (x <= 10000)
+                    Console.WriteLine("Выручка = {0} ", 0.05 * x);
+            else
+                    Console.WriteLine("Выручка = {0} ", (10000 * 0.05) + ((x - 10000) * 0.1));
             Console.ReadKey();
         }
     }
